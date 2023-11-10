@@ -2,9 +2,10 @@ SECRET_KEY = '123447a47f563e90fe2db0f56b1b17be62378e31b7cfd3adc776c59ca4c75e2fc5
 
 PROPAGATE_EXCEPTIONS = True
 
-
+import os
+ 
 #Database configuration
-SQLALCHEMY_DATABASE_URI = f"postgresql://postgres:password@172.17.0.3:5432/api_peliculas"
+SQLALCHEMY_DATABASE_URI = "postgresql://postgres:password@34.16.15.63:5432/api_peliculas"
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SHOW_SQLALCHEMY_LOG_MESSAGES = False

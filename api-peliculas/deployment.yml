@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-v1
+  labels:
+    app: postgres
+    version: "1.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+        version: "1.0"
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest 
+        ports:
+          - containerPort: 5432
+        env:
+          - name: POSTRGRES_USER
+            value: postgres
+          - name: POSTGRES_PASSWORD
+            value: password
+          - name: POSTGRES_DB
+            value: api_peliculas
